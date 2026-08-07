@@ -7,7 +7,8 @@
     "build": "npm run assets && next build",
     "check": "tsc --noEmit",
     "test": "npm run check && npm run build && node scripts/verify-export.mjs",
-    "assets": "node scripts/materialize-assets.mjs"
+    "assets": "node scripts/materialize-assets.mjs",
+    "branch-page": "node scripts/generate-branch-page.cjs"
   },
   "dependencies": {
     "next": "16.2.6",

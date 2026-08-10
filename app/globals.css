@@ -43,7 +43,7 @@ a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 4px; }
   z-index: 20;
 }
 .wordmark { display: flex; flex-direction: column; width: fit-content; font-weight: 900; font-size: 14px; line-height: .9; letter-spacing: -.03em; }
-.wordmark em { margin: 3px 0 0 36px; color: var(--coral-dark); font-family: Georgia, serif; font-size: 12px; font-weight: 700; }
+.wordmark em { margin: 2px 0 0; color: var(--coral-dark); font-family: Georgia, serif; font-size: 12px; font-style: normal; font-weight: 700; line-height: 1; }
 .site-header nav { display: flex; gap: 28px; font-size: 14px; font-weight: 700; }
 .site-header nav a { padding-block: 10px; border-bottom: 2px solid transparent; }
 .site-header nav a:hover, .site-header nav a:focus-visible { border-color: var(--coral); }
@@ -89,7 +89,7 @@ a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 4px; }
   letter-spacing: -.085em;
   font-weight: 950;
 }
-.hero h1 em { display: block; width: fit-content; margin: 20px 0 0 48%; color: var(--coral-dark); font-family: Georgia, serif; font-size: .28em; font-weight: 700; letter-spacing: -.03em; transform: rotate(-5deg); }
+.hero h1 em { display: block; width: fit-content; margin: .12em 0 0; color: var(--coral-dark); font-family: Georgia, serif; font-size: .28em; font-style: normal; font-weight: 700; line-height: 1; letter-spacing: -.03em; }
 .hero-intro { max-width: 620px; margin-top: 34px; font-size: clamp(16px, 1.55vw, 19px); line-height: 1.55; font-weight: 520; }
 .hero-intro p { margin: 0 0 14px; }
 .hero-actions { display: flex; align-items: center; gap: 28px; margin-top: 34px; }
@@ -116,6 +116,7 @@ a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 4px; }
   font-family: var(--font-geist-mono), monospace;
   font-weight: 900;
   line-height: 1.05;
+  text-transform: uppercase;
   border: 2px solid var(--ink);
   box-shadow: 4px 4px 0 var(--ink);
 }
@@ -190,7 +191,7 @@ a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 4px; }
 .about-tags span { padding: 9px 12px; background: var(--cream); border: 1px solid var(--ink); font-size: 11px; font-weight: 750; transform: rotate(-1deg); }
 .about-tags span:nth-child(even) { transform: rotate(1deg); background: var(--blue); }
 .about-image { position: relative; aspect-ratio: .92 / 1; border: 3px solid var(--ink); box-shadow: 10px 10px 0 var(--coral); transform: rotate(1deg); }
-.about-image img { object-fit: cover; object-position: 45% center; }
+.about-image img { object-fit: cover; object-position: 38% center; }
 .about-image > span { position: absolute; right: -25px; bottom: 28px; padding: 12px 15px; background: var(--cream); border: 2px solid var(--ink); box-shadow: 3px 3px 0 var(--ink); font-family: Georgia, serif; font-size: 13px; font-style: italic; transform: rotate(-4deg); }
 
 .request { background: var(--coral-dark); color: var(--cream); padding-block: 108px; border-block: 3px solid var(--ink); }
@@ -231,10 +232,10 @@ a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 4px; }
   .site-header > .button { min-height: 40px; padding: 0 12px; font-size: 11px; box-shadow: 3px 3px 0 var(--ink); }
   .site-header > .button span { display: none; }
   .wordmark { font-size: 12px; }
-  .wordmark em { margin-left: 29px; font-size: 10px; }
+  .wordmark em { margin-left: 0; font-size: 10px; }
   .hero { min-height: auto; gap: 42px; padding-block: 62px 76px; }
   .hero h1 { font-size: clamp(52px, 18vw, 86px); overflow-wrap: normal; }
-  .hero h1 em { margin-top: 16px; margin-left: 40%; font-size: .31em; }
+  .hero h1 em { margin-top: .12em; margin-left: 0; font-size: .31em; }
   .hero-intro { margin-top: 27px; font-size: 16px; }
   .hero-actions { align-items: flex-start; flex-direction: column; gap: 10px; }
   .hero-actions .button { width: 100%; }

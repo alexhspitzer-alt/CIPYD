@@ -43,7 +43,7 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="wordmark" href="#top" aria-label="Can I Pet Your Dog home">
-          <span>CAN I PET</span><span>YOUR DOG?</span><em>(or cat)</em>
+          <span>CAN I PET</span><span>YOUR DOG</span><em>(or cat)</em>
         </a>
         <nav aria-label="Main navigation">
           <a href="#services">Services</a>
@@ -56,7 +56,7 @@ export default function Home() {
       <section className="hero page-shell" id="top">
         <div className="hero-copy">
           <p className="eyebrow"><span /> Independent pet care in Durham, North Carolina</p>
-          <h1>CAN I PET<br />YOUR DOG?<em>(or cat)</em></h1>
+          <h1>CAN I PET<br />YOUR DOG<em>(or cat)</em></h1>
           <div className="hero-intro">
             <p>Flexible walks, drop-ins, and longer visits for pets with their own routines, preferences, and ideas about how the day should go.</p>
             <p>Tell me what your pet needs. We’ll make a plan, agree on a straightforward price, and leave a little room for real life.</p>
@@ -75,8 +75,8 @@ export default function Home() {
           <div className="hero-photo-frame">
             <Image src={assetPath("/photos/hero-apollo.jpg")} alt="Alex smiling down at Apollo, a large fluffy white dog, on a sunny Durham sidewalk" fill priority sizes="(max-width: 700px) 92vw, (max-width: 980px) 690px, 48vw" />
           </div>
-          <div className="hero-sticker sticker-top">BIG DOG<br />APPROVED</div>
-          <div className="hero-sticker sticker-bottom">GOOD WITH<br />PLAN B</div>
+          <div className="hero-sticker sticker-top">Big Pupper<br />Approved</div>
+          <div className="hero-sticker sticker-bottom">Best Scratches<br />in Town</div>
           <div className="leash-line" aria-hidden="true" />
         </div>
       </section>
@@ -88,7 +88,7 @@ export default function Home() {
       <section className="services page-shell" id="services">
         <div className="section-heading">
           <div><p className="eyebrow"><span /> What does your pet need?</p><h2>A simple plan that fits the animal.</h2></div>
-          <div className="section-intro"><p>Some pets need a proper walk. Some need food, medication, and twenty minutes to decide whether I may exist in the same room. Some need company for a few hours.</p><p>Start with what would actually help.</p></div>
+          <div className="section-intro"><p>Some pets need a “real” walk. Some need food, medication, and twenty minutes to make up their mind about humans. Some need company for a few hours and that one toy with the good crinkles.</p><p>Let’s figure it out!</p></div>
         </div>
         <div className="service-grid">
           {services.map((service) => <article className={`service-card ${service.tone}`} key={service.title}>
@@ -143,7 +143,7 @@ export default function Home() {
           <p>I work with the relationship you already have with your pet. You know them. My job is to listen, learn the routine, and help keep their day workable while you’re away.</p>
           <div className="about-tags" aria-label="Alex’s pet care experience"><span>Five years in the pet industry</span><span>Comfortable with anxious dogs</span><span>Medication and routine care</span><span>Dogs, cats, and mixed households</span></div>
         </div>
-        <div className="about-image"><Image src={assetPath("/photos/floor-hangout.jpg")} alt="Alex relaxing on the floor beside a black and white dog lying belly-up" fill sizes="(max-width: 700px) 88vw, (max-width: 980px) 620px, 42vw" /><span>My preferred office setup.</span></div>
+        <div className="about-image"><Image src={assetPath("/photos/floor-hangout.jpg")} alt="Alex relaxing on the floor beside a black and white dog lying belly-up" fill sizes="(max-width: 700px) 88vw, (max-width: 980px) 620px, 42vw" /><span>All packages include unlimited belly rubs.</span></div>
       </section>
 
       <section className="request" id="request">
@@ -159,7 +159,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="site-footer page-shell"><a className="wordmark footer-mark" href="#top"><span>CAN I PET</span><span>YOUR DOG?</span><em>(or cat)</em></a><p>Flexible dog walking and pet sitting in Durham, North Carolina.</p><a href="#top">Back to top ↑</a></footer>
+      <footer className="site-footer page-shell"><a className="wordmark footer-mark" href="#top"><span>CAN I PET</span><span>YOUR DOG</span><em>(or cat)</em></a><p>Flexible dog walking and pet sitting in Durham, North Carolina.</p><a href="#top">Back to top ↑</a></footer>
     </main>
   );
 }

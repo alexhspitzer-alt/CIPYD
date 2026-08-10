@@ -136,11 +136,12 @@ export default function Home() {
 
       <section className="about page-shell" id="about">
         <div className="about-copy">
-          <p className="eyebrow"><span /> Hi, I’m Alex</p><h2>Five years in the pet industry. <i>Still asking first.</i></h2>
-          <p className="about-lede">I’ve worked in the pet industry for five years, including dog walks, drop-ins, and longer in-home visits.</p>
-          <p>The part I like best is learning the individual animal: what helps them settle, what gets them moving, what counts as normal, and which household rules are apparently constitutional law.</p>
-          <p>I’m practical, observant, and comfortable when the day isn’t especially tidy. I notice changes in behavior, appetite, movement, bathroom habits, gear, and the space around the animal. If something seems off, I’ll tell you plainly.</p>
-          <p>I work with the relationship you already have with your pet. You know them. My job is to listen, learn the routine, and help keep their day workable while you’re away.</p>
+          <p className="eyebrow"><span /> Hi, I’m Alex</p><h2>Five years in the pet industry. <i>Hundreds of animals, still haven’t met a bad one.</i></h2>
+          <p>I’ve worked in the pet industry for five years, including retail product support for customers, harness and collar fitting, working with food and supplement wholesalers, and of course pet sitting. I’ve worked with vets, trainers, service animals and working dogs, and local rescue organizations. I’ve sat with exasperated people with their first puppy or kitten.</p>
+          <blockquote className="about-quote"><strong>But my favorite clients have four legs.</strong></blockquote>
+          <p>The part I like best is learning the individual animal: what helps them settle, what gets them moving, what counts as normal, and what will they absolutely not abide.</p>
+          <p>I’m practical, observant, and comfortable with a little chaos. I notice changes in behavior, appetite, movement, bathroom habits, gear, etc. If something seems off, I’ll tell you plainly.</p>
+          <p>I work with the relationship you already have. <strong>You know your pet.</strong> My job is to listen, learn the routine, and help keep them safe and steady while you’re away.</p>
           <div className="about-tags" aria-label="Alex’s pet care experience"><span>Five years in the pet industry</span><span>Comfortable with anxious dogs</span><span>Medication and routine care</span><span>Dogs, cats, and mixed households</span></div>
         </div>
         <div className="about-image"><Image src={assetPath("/photos/floor-hangout.jpg")} alt="Alex relaxing on the floor beside a black and white dog lying belly-up" fill sizes="(max-width: 700px) 88vw, (max-width: 980px) 620px, 42vw" /><span>All packages include unlimited belly rubs.</span></div>

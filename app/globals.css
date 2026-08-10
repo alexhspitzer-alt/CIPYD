@@ -185,8 +185,9 @@ a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 4px; }
 
 .about { display: grid; grid-template-columns: 1fr .86fr; gap: clamp(56px, 9vw, 125px); align-items: center; padding-bottom: 140px; }
 .about h2 i { color: var(--coral-dark); font-family: Georgia, serif; font-size: .7em; font-weight: 700; }
-.about-lede { margin: 32px 0 20px; font-size: 19px !important; color: var(--ink) !important; font-weight: 620; }
 .about-copy > p { max-width: 630px; color: #4f6260; font-size: 15px; line-height: 1.7; }
+.about-copy > .eyebrow + h2 + p { margin-top: 32px; }
+.about-quote { max-width: 580px; margin: 27px 0; padding: 15px 0 15px 20px; border-left: 6px solid var(--coral); color: var(--ink); font-size: clamp(21px, 2.2vw, 29px); line-height: 1.15; letter-spacing: -.035em; }
 .about-tags { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 30px; }
 .about-tags span { padding: 9px 12px; background: var(--cream); border: 1px solid var(--ink); font-size: 11px; font-weight: 750; transform: rotate(-1deg); }
 .about-tags span:nth-child(even) { transform: rotate(1deg); background: var(--blue); }
@@ -265,7 +266,6 @@ a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 4px; }
   .snapshot-image { aspect-ratio: 1 / .88; }
   .pricing-note { grid-template-columns: 1fr; margin-top: 48px; padding: 22px; }
   .about { padding-bottom: 108px; gap: 58px; }
-  .about-lede { font-size: 17px !important; }
   .about-image { width: 94%; aspect-ratio: .84 / 1; }
   .about-image > span { right: -10px; }
   .request { padding-block: 90px; }

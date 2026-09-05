@@ -16,6 +16,7 @@ const services = [
 
 const photos = [
   { src: "/photos/chair-dogs.jpg", alt: "Alex sitting outdoors with two dogs gathered around him." },
+  { src: "/photos/morgan-raincoat-walk.webp", alt: "Morgan walking a brown dog in the rain while wearing a raincoat." },
   { src: "/photos/paw-handshake.jpg", alt: "Alex kneeling beside a dog with a paw resting in his hands." },
 ];
 
@@ -37,8 +38,9 @@ export default function Home() {
       </div>
       <div className="hero-visual">
         <div className="hero-photo-frame"><Image src={assetPath("/photos/morgan-dogs-couch.webp")} alt="Morgan relaxing on a couch with three dogs." fill priority sizes="(max-width: 980px) 92vw, 48vw" /></div>
-        <div className="hero-photo-secondary"><Image src={assetPath("/photos/hero-apollo.jpg")} alt="Alex greeting a large fluffy white dog on a neighborhood sidewalk." fill sizes="(max-width: 700px) 76vw, 29vw" /><div className="hero-sticker sticker-bottom">Best Scratches<br />in Town</div></div>
+        <div className="hero-photo-secondary"><Image src={assetPath("/photos/hero-apollo.jpg")} alt="Alex greeting a large fluffy white dog on a neighborhood sidewalk." fill sizes="(max-width: 700px) 76vw, 29vw" /></div>
         <div className="hero-photo-tertiary"><Image src={assetPath("/photos/dog-kiss.jpg")} alt="A large tan dog licking Alex on the chin." fill sizes="(max-width: 700px) 42vw, 17vw" /></div>
+        <div className="hero-sticker sticker-bottom">Best Scratches<br />in Town</div>
       </div>
     </section>
 

@@ -10,6 +10,7 @@ const voids = new Set(['img','br','hr','meta','link','input']);
 const uploadedPhotos = {
   'morgan-dogs-couch.webp': 'assets/source/photos/morgan-dogs-couch.webp.base64',
   'morgan-cat-chair.webp': 'assets/source/photos/morgan-cat-chair.webp.base64',
+  'morgan-raincoat-walk.webp': 'assets/source/photos/morgan-raincoat-walk.webp.base64',
 };
 const esc = s => String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
 function render(node) {

@@ -12,6 +12,7 @@ const assets = [
   ].map((name) => [`assets/source/photos/${name}.base64`, `public/photos/${name}`]),
   ["assets/source/photos/morgan-dogs-couch.webp.base64", "public/photos/morgan-dogs-couch.webp"],
   ["assets/source/photos/morgan-cat-chair.webp.base64", "public/photos/morgan-cat-chair.webp"],
+  ["assets/source/photos/morgan-raincoat-walk.webp.base64", "public/photos/morgan-raincoat-walk.webp"],
   ...["geist-latin.woff2", "geist-mono-latin.woff2"].map((name) => [
     `assets/source/fonts/${name}.base64`,
     `app/fonts/${name}`,

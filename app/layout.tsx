@@ -19,7 +19,7 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Can I Pet Your Dog (or cat)",
   description:
-    "Independent dog walking, drop-in visits, and in-home pet care in Durham, North Carolina.",
+    "Flexible pet care in Durham with Alex and Morgan: dog walks, visits, house sitting, doggy daycare, and overnight boarding at Morgan’s home.",
 };
 
 export default function RootLayout({

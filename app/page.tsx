@@ -43,7 +43,7 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="wordmark" href="#top" aria-label="Can I Pet Your Dog home">
-          <span>CAN I PET</span><span>YOUR DOG</span><em>(or cat)</em>
+          <span>CAN I PET</span><span>YOUR DOG</span><em className="title-subtitle">(or cat)</em>
         </a>
         <nav aria-label="Main navigation">
           <a href="#services">Services</a>
@@ -56,7 +56,7 @@ export default function Home() {
       <section className="hero page-shell" id="top">
         <div className="hero-copy">
           <p className="eyebrow"><span /> Independent pet care in Durham, North Carolina</p>
-          <h1>CAN I PET<br />YOUR DOG<em>(or cat)</em></h1>
+          <h1>CAN I PET<br />YOUR DOG<em className="title-subtitle">(or cat)</em></h1>
           <div className="hero-intro">
             <p>Flexible walks, drop-ins, and longer visits for pets with their own routines, preferences, and ideas about how the day should go.</p>
             <p>Tell me what your pet needs. We’ll make a plan, agree on a straightforward price, and leave a little room for real life.</p>
@@ -73,7 +73,7 @@ export default function Home() {
         </div>
         <div className="hero-visual">
           <div className="hero-photo-frame">
-            <Image src={assetPath("/photos/hero-apollo.jpg")} alt="Alex smiling down at Apollo, a large fluffy white dog, on a sunny Durham sidewalk" fill priority sizes="(max-width: 700px) 92vw, (max-width: 980px) 690px, 48vw" />
+            <Image src={assetPath("/photos/hero-apollo.jpg")} alt="Alex smiling down at a large fluffy white dog on a sunny Durham sidewalk" fill priority sizes="(max-width: 700px) 92vw, (max-width: 980px) 690px, 48vw" />
           </div>
           <div className="hero-sticker sticker-top">Big Pupper<br />Approved</div>
           <div className="hero-sticker sticker-bottom">Best Scratches<br />in Town</div>
@@ -124,7 +124,7 @@ export default function Home() {
       <section className="complicated page-shell" aria-labelledby="complicated-title">
         <div className="complicated-copy">
           <h2 id="complicated-title">“Sorry, he’s kind of weird about…”</h2>
-          <p className="complicated-subtitle">perfect I love weirdos</p>
+          <p className="title-subtitle complicated-subtitle">perfect I love weirdos</p>
           <div className="complicated-columns">
             <div><p>I genuinely like working with anxious, cautious, excitable, stubborn, and generally neurotic animals. I love learning what makes your pet complicated because honestly, we’re all complicated and we all want the best for our best friend.</p></div>
             <div><p>So I want to understand what works for you, and I’ll listen to your dog or cat when they give me their opinion too.</p><p>The right visit might be a long walk, a game, a lap full of cuddles, a nap, or twenty peaceful minutes of mutually respectful distance.</p></div>
@@ -137,7 +137,7 @@ export default function Home() {
 
       <section className="about page-shell" id="about">
         <div className="about-copy">
-          <p className="eyebrow"><span /> Hi, I’m Alex</p><h2>Five years in the pet industry. <i>Hundreds of animals, still haven’t met a bad one.</i></h2>
+          <p className="eyebrow"><span /> Hi, I’m Alex</p><h2>Five years in the pet industry. <i className="title-subtitle about-subtitle">hundreds of animals, still haven’t met a bad one</i></h2>
           <p>I’ve worked in the pet industry for five years, including retail product support for customers, harness and collar fitting, working with food and supplement wholesalers, and of course pet sitting. I’ve worked with vets, trainers, service animals and working dogs, and local rescue organizations. I’ve sat with exasperated people with their first puppy or kitten.</p>
           <blockquote className="about-quote"><strong>But my favorite clients have four legs.</strong></blockquote>
           <p>The part I like best is learning the individual animal: what helps them settle, what gets them moving, what counts as normal, and what will they absolutely not abide.</p>
@@ -161,7 +161,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="site-footer page-shell"><a className="wordmark footer-mark" href="#top"><span>CAN I PET</span><span>YOUR DOG</span><em>(or cat)</em></a><p>Flexible dog walking and pet sitting in Durham, North Carolina.</p><a href="#top">Back to top ↑</a></footer>
+      <footer className="site-footer page-shell"><a className="wordmark footer-mark" href="#top"><span>CAN I PET</span><span>YOUR DOG</span><em className="title-subtitle">(or cat)</em></a><p>Flexible dog walking and pet sitting in Durham, North Carolina.</p><a href="#top">Back to top ↑</a></footer>
     </main>
   );
 }

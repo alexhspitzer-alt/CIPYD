@@ -43,7 +43,18 @@ a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 4px; }
   z-index: 20;
 }
 .wordmark { display: flex; flex-direction: column; width: fit-content; font-weight: 900; font-size: 14px; line-height: .9; letter-spacing: -.03em; }
-.wordmark em { margin: 2px 0 0; color: var(--coral-dark); font-family: Georgia, serif; font-size: 12px; font-style: normal; font-weight: 700; line-height: 1; }
+.title-subtitle {
+  display: block;
+  width: fit-content;
+  color: var(--coral-dark);
+  font-family: Georgia, serif;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1;
+  text-align: left;
+  text-transform: lowercase;
+}
+.wordmark .title-subtitle { margin: 2px 0 0; font-size: 12px; }
 .site-header nav { display: flex; gap: 28px; font-size: 14px; font-weight: 700; }
 .site-header nav a { padding-block: 10px; border-bottom: 2px solid transparent; }
 .site-header nav a:hover, .site-header nav a:focus-visible { border-color: var(--coral); }
@@ -89,7 +100,7 @@ a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 4px; }
   letter-spacing: -.085em;
   font-weight: 950;
 }
-.hero h1 em { display: block; width: fit-content; margin: .12em 0 0; color: var(--coral-dark); font-family: Georgia, serif; font-size: .28em; font-style: normal; font-weight: 700; line-height: 1; letter-spacing: -.03em; }
+.hero h1 .title-subtitle { margin: .12em 0 0; font-size: .28em; letter-spacing: -.03em; }
 .hero-intro { max-width: 620px; margin-top: 34px; font-size: clamp(16px, 1.55vw, 19px); line-height: 1.55; font-weight: 520; }
 .hero-intro p { margin: 0 0 14px; }
 .hero-actions { display: flex; align-items: center; gap: 28px; margin-top: 34px; }
@@ -169,7 +180,7 @@ a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 4px; }
 .complicated { padding-block: 130px 155px; }
 .complicated-copy { max-width: 1050px; margin-bottom: 78px; }
 .complicated h2 { max-width: 950px; }
-.complicated-subtitle { margin: 18px 0 0; color: var(--coral-dark); font-family: Georgia, serif; font-size: clamp(24px, 3vw, 38px); font-weight: 700; line-height: 1; }
+.complicated-subtitle { margin: 14px 0 0; font-size: clamp(18px, 2vw, 26px); }
 .complicated-columns { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(38px, 7vw, 90px); margin-top: 38px; }
 .complicated-columns p { margin: 0 0 18px; color: #425957; font-size: 16px; line-height: 1.7; }
 .snapshot-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; align-items: start; }
@@ -185,7 +196,7 @@ a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 4px; }
 .snapshot figcaption { padding: 17px 8px 0; font-family: Georgia, serif; font-size: 17px; font-style: italic; text-align: center; }
 
 .about { display: grid; grid-template-columns: 1fr .86fr; gap: clamp(56px, 9vw, 125px); align-items: center; padding-bottom: 140px; }
-.about h2 i { color: var(--coral-dark); font-family: Georgia, serif; font-size: .7em; font-weight: 700; }
+.about h2 .about-subtitle { margin: .18em 0 0; font-size: .34em; letter-spacing: -.025em; }
 .about-copy > p { max-width: 630px; color: #4f6260; font-size: 15px; line-height: 1.7; }
 .about-copy > .eyebrow + h2 + p { margin-top: 32px; }
 .about-quote { max-width: 580px; margin: 27px 0; padding: 15px 0 15px 20px; border-left: 6px solid var(--coral); color: var(--ink); font-size: clamp(21px, 2.2vw, 29px); line-height: 1.15; letter-spacing: -.035em; }
@@ -234,10 +245,10 @@ a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 4px; }
   .site-header > .button { min-height: 40px; padding: 0 12px; font-size: 11px; box-shadow: 3px 3px 0 var(--ink); }
   .site-header > .button span { display: none; }
   .wordmark { font-size: 12px; }
-  .wordmark em { margin-left: 0; font-size: 10px; }
+  .wordmark .title-subtitle { margin-left: 0; font-size: 10px; }
   .hero { min-height: auto; gap: 42px; padding-block: 62px 76px; }
   .hero h1 { font-size: clamp(52px, 18vw, 86px); overflow-wrap: normal; }
-  .hero h1 em { margin-top: .12em; margin-left: 0; font-size: .31em; }
+  .hero h1 .title-subtitle { margin-top: .12em; margin-left: 0; font-size: .31em; }
   .hero-intro { margin-top: 27px; font-size: 16px; }
   .hero-actions { align-items: flex-start; flex-direction: column; gap: 10px; }
   .hero-actions .button { width: 100%; }

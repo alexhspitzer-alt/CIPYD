@@ -1,0 +1,12 @@
+node_modules/
+.npm-cache/
+.next/
+out/
+.DS_Store
+*.log
+*.tsbuildinfo
+.env*.local
+
+# Generated from the text-safe sources in assets/source/
+app/fonts/
+public/photos/

@@ -16,8 +16,10 @@ await Promise.all(expectedFiles.map((file) => access(file)));
 const html = await readFile("out/index.html", "utf8");
 const basePath = (process.env.PAGES_BASE_PATH ?? "").replace(/\/$/, "");
 assert.match(html, /Can I Pet Your Dog/i);
-assert.match(html, /Independent pet care in Durham, NC/i);
+assert.match(html, /Flexible pet care in Durham, North Carolina/i);
+assert.match(html, /More than 30 years caring for pets/i);
+assert.match(html, /At Morgan’s home/i);
 assert.match(html, new RegExp(`${basePath}/photos/hero-apollo\\.jpg`));
-assert.doesNotMatch(html, /src="\/photos\//);
+if (basePath) assert.doesNotMatch(html, /src="\/photos\//);
 
 console.log("Static export verified: homepage and local photo assets are present.");

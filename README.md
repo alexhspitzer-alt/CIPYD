@@ -1,6 +1,6 @@
 # Can I Pet Your Dog (or cat)
 
-A responsive, static homepage for independent pet care in Durham, North Carolina. This handoff preserves the current Sites mockup while removing its hosting-specific runtime. All production photos are included as text-safe Base64 sources, materialized locally before development or builds, and the project exports plain static files that GitHub Pages can serve.
+A responsive, static homepage for Alex and Morgan’s pet-care partnership in Durham, North Carolina. The project preserves the current visual identity while exporting plain static files that GitHub Pages can serve. Included production photos are stored as text-safe Base64 sources and materialized locally before development or builds.
 
 Visual reference: https://can-i-pet-your-dog.happyfarmer.chatgpt.site
 
@@ -8,7 +8,6 @@ Visual reference: https://can-i-pet-your-dog.happyfarmer.chatgpt.site
 
 1. Open `app/page.tsx`.
 2. Replace `REQUEST_FORM_URL` with the public URL of your Google Form.
-3. Confirm the Rover rating, review count, service area, and wording.
 
 ## Run locally
 

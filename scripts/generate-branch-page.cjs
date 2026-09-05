@@ -7,6 +7,10 @@ const React = { createElement(type, props, ...children) { return { type, props: 
 const mod = { exports: {} };
 vm.runInNewContext(js, { module: mod, exports: mod.exports, React, process: { env: {} } });
 const voids = new Set(['img','br','hr','meta','link','input']);
+const uploadedPhotos = {
+  'morgan-dogs-couch.png': 'file_00000000a6e081f5a8a5a8b9dc1ddfda.png',
+  'morgan-cat-chair.png': 'file_0000000002e881f59749ade704468c5b.png',
+};
 const esc = s => String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
 function render(node) {
   if (node == null || node === false || node === true) return '';
@@ -20,7 +24,10 @@ function render(node) {
     if (key === 'htmlFor') key='for';
     if (key === 'fill') { attrs += ' style="position:absolute;height:100%;width:100%;left:0;top:0;color:transparent"'; continue; }
     if (key === 'priority' || key === 'key' || key.startsWith('on') || val == null || val === false) continue;
-    if (key === 'src' && typeof val === 'string' && val.startsWith('/photos/')) val = `assets/source/photos/${val.slice(8)}.base64`;
+    if (key === 'src' && typeof val === 'string' && val.startsWith('/photos/')) {
+      const name = val.slice(8);
+      val = uploadedPhotos[name] || `assets/source/photos/${name}.base64`;
+    }
     if (val === true) attrs += ` ${key}`; else attrs += ` ${key}="${esc(val)}"`;
   }
   if (voids.has(node.type)) return `<${node.type}${attrs}>`;

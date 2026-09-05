@@ -190,14 +190,14 @@ a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 4px; }
 .complicated-columns p { margin: 0 0 18px; color: #425957; font-size: 16px; line-height: 1.7; }
 .snapshot-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; align-items: start; }
 .snapshot { margin: 0; padding: 13px 13px 20px; background: var(--cream); border: 1px solid #ddd4c4; box-shadow: 5px 9px 21px rgba(23,54,59,.18); }
-.snapshot-one { transform: rotate(-3deg); }
-.snapshot-two { margin-top: -54px; transform: rotate(2.4deg); }
-.snapshot-three { transform: rotate(-1deg); }
+.snapshot-1 { transform: rotate(-3deg); }
+.snapshot-2 { margin-top: -54px; transform: rotate(2.4deg); }
+.snapshot-3 { transform: rotate(-1deg); }
 .snapshot-image { position: relative; aspect-ratio: 1 / .9; overflow: hidden; background: #d8d3c9; }
 .snapshot img { object-fit: cover; }
-.snapshot-one img { object-position: center; }
-.snapshot-two img { object-position: 52% center; }
-.snapshot-three img { object-position: center 40%; }
+.snapshot-1 img { object-position: center; }
+.snapshot-2 img { object-position: 52% center; }
+.snapshot-3 img { object-position: center 40%; }
 .snapshot figcaption { padding: 17px 8px 0; font-family: Georgia, serif; font-size: 17px; font-style: italic; text-align: center; }
 
 .about { display: grid; grid-template-columns: 1fr .86fr; gap: clamp(56px, 9vw, 125px); align-items: center; padding-bottom: 140px; }
@@ -252,7 +252,7 @@ a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 4px; }
   .hero h1 { font-size: clamp(68px, 13vw, 112px); }
   .hero-visual { width: min(690px, 92%); margin: 20px auto 0; }
   .service-grid { grid-template-columns: 1fr 1fr; }
-  .service-card:nth-child(3) { grid-column: span 2; min-height: 360px; }
+  .service-card:nth-child(3) { grid-column: auto; min-height: 390px; }
   .real-life-grid, .about, .request-inner, .welcome, .profile { grid-template-columns: 1fr; }
   .rain-photo { width: min(680px, 95%); }
   .about-image, .profile-image { width: min(620px, 92%); justify-self: center; }
@@ -294,7 +294,7 @@ a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 4px; }
   .complicated-columns { grid-template-columns: 1fr; gap: 0; margin-top: 30px; }
   .complicated-copy { margin-bottom: 60px; }
   .snapshot-grid { grid-template-columns: 1fr; gap: 35px; padding-inline: 12px; }
-  .snapshot, .snapshot-two { width: 95%; margin: 0 auto; }
+  .snapshot, .snapshot-2 { width: 95%; margin: 0 auto; }
   .snapshot-image { aspect-ratio: 1 / .88; }
   .pricing-note { grid-template-columns: 1fr; margin-top: 48px; padding: 22px; }
   .welcome { gap: 18px; padding-bottom: 94px; }

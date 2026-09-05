@@ -106,7 +106,7 @@ a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 4px; }
 .hero-actions { display: flex; align-items: center; gap: 28px; margin-top: 34px; }
 .trust-row { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 38px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 12px; color: var(--muted); }
 .trust-row strong { color: var(--ink); font-size: 14px; }
-.hero-visual { position: relative; min-width: 0; padding-bottom: 24%; }
+.hero-visual { position: relative; min-width: 0; padding-block: 22% 4%; }
 .hero-photo-frame {
   position: relative;
   z-index: 1;
@@ -122,17 +122,17 @@ a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 4px; }
 .hero-photo-secondary {
   position: absolute;
   z-index: 2;
-  left: -5%;
-  bottom: 0;
-  width: 47%;
-  aspect-ratio: 1.48 / 1;
+  top: 0;
+  right: -4%;
+  width: 61%;
+  aspect-ratio: 1.34 / 1;
   overflow: hidden;
   background: var(--cream);
   border: 3px solid var(--cream);
   box-shadow: 8px 8px 0 var(--ink);
   transform: rotate(-3deg);
 }
-.hero-photo-secondary img { object-fit: cover; object-position: center; }
+.hero-photo-secondary img { object-fit: cover; object-position: 58% center; }
 .hero-sticker {
   position: absolute;
   z-index: 3;
@@ -147,7 +147,7 @@ a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 4px; }
   box-shadow: 4px 4px 0 var(--ink);
 }
 .sticker-top { width: 98px; height: 98px; top: -27px; right: -30px; border-radius: 50%; background: var(--yellow); font-size: 11px; transform: rotate(9deg); }
-.sticker-bottom { min-width: 138px; top: -24px; right: 24px; padding: 14px 18px; background: var(--cream); font-family: Georgia, serif; font-size: 15px; font-style: italic; transform: rotate(3deg); }
+.sticker-bottom { min-width: 138px; top: 18px; left: 16px; padding: 14px 18px; background: var(--cream); font-family: Georgia, serif; font-size: 15px; font-style: italic; transform: rotate(-3deg); }
 .leash-line { position: absolute; width: 160px; height: 70px; left: -67px; bottom: -49px; border: 8px solid var(--coral); border-left-color: transparent; border-bottom-color: transparent; border-radius: 50%; transform: rotate(15deg); z-index: -1; }
 
 .ticker { overflow: hidden; background: var(--ink); color: var(--cream); border-block: 2px solid var(--ink); transform: rotate(-.65deg) scale(1.02); }
@@ -291,12 +291,12 @@ a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 4px; }
   .hero-actions .button { width: 100%; }
   .trust-row { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
   .trust-row span:last-child { grid-column: span 2; }
-  .hero-visual { width: 96%; padding-bottom: 39%; }
+  .hero-visual { width: 96%; padding: 0 0 52%; }
   .hero-photo-frame { aspect-ratio: 1.65 / 1; box-shadow: 7px 7px 0 var(--ink); }
   .hero-photo-frame img { object-position: 54% center; }
-  .hero-photo-secondary { left: -1%; width: 62%; box-shadow: 6px 6px 0 var(--ink); }
+  .hero-photo-secondary { top: auto; right: -1%; bottom: 0; width: 78%; box-shadow: 6px 6px 0 var(--ink); }
   .sticker-top { width: 84px; height: 84px; top: -24px; right: -16px; }
-  .sticker-bottom { top: -20px; right: 5px; }
+  .sticker-bottom { top: 12px; left: 10px; min-width: 122px; padding: 11px 13px; font-size: 13px; }
   .ticker div { gap: 18px; font-size: 13px; }
   .services, .complicated { padding-block: 95px 105px; }
   .section-heading { grid-template-columns: 1fr; gap: 26px; margin-bottom: 45px; }

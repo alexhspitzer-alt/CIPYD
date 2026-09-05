@@ -38,8 +38,7 @@ export default function Home() {
       </div>
       <div className="hero-visual">
         <div className="hero-photo-frame"><Image src={assetPath("/photos/morgan-dogs-couch.webp")} alt="Morgan relaxing on a couch with three dogs." fill priority sizes="(max-width: 980px) 92vw, 48vw" /></div>
-        <div className="hero-photo-secondary"><Image src={assetPath("/photos/hero-apollo.jpg")} alt="Alex greeting a large fluffy white dog on a neighborhood sidewalk." fill sizes="(max-width: 700px) 60vw, 23vw" /></div>
-        <div className="hero-sticker sticker-bottom">Best Scratches<br />in Town</div>
+        <div className="hero-photo-secondary"><Image src={assetPath("/photos/hero-apollo.jpg")} alt="Alex greeting a large fluffy white dog on a neighborhood sidewalk." fill sizes="(max-width: 700px) 76vw, 29vw" /><div className="hero-sticker sticker-bottom">Best Scratches<br />in Town</div></div>
       </div>
     </section>
 

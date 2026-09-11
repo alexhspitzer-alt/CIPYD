@@ -24,7 +24,7 @@ export default function Home() {
   return <main>
     <header className="site-header">
       <a className="wordmark" href="#top" aria-label="Can I Pet Your Dog home"><span>CAN I PET</span><span>YOUR DOG</span><em className="title-subtitle">(or cat)</em></a>
-      <nav aria-label="Main navigation"><a href="#services">Services</a><a href="#care">How we care</a><a href="#team">Alex & Morgan</a></nav>
+      <nav aria-label="Main navigation"><a href="#services">Services</a><a href="#care">Sixth visit free</a><a href="#team">Alex & Morgan</a></nav>
       <a className="button button-small" href="#request">Tell us about your pet</a>
     </header>
 
@@ -58,9 +58,9 @@ export default function Home() {
     </section>
 
     <section className="real-life" id="care"><div className="page-shell real-life-grid">
-      <div className="rain-photo"><Image src={assetPath("/photos/rain-shake.jpg")} alt="A wet white dog shaking water beside Alex, who is holding a towel." fill sizes="(max-width: 980px) 90vw, 48vw" /><span className="photo-note">Some days the plan needs a towel.</span></div>
-      <div className="real-life-copy"><p className="eyebrow light"><span /> How we care</p><h2>We make a plan. Then we pay attention.</h2><p className="work-intro">You know your pet. We take time to learn their routine, preferences, and the small details that make a difference. During care, we pay attention to how they’re doing and keep you informed.</p>
-        <ol><li><strong>01</strong><span><b>Learn the routine</b>We talk through meals, walks, medication, favorite activities, and what a comfortable day looks like. We also agree on who will provide care and where.</span></li><li><strong>02</strong><span><b>Care for the day</b>We follow the plan and pay attention to energy, appetite, movement, behavior, and the weather. We adapt activities to how your pet is doing and check with you when a decision needs your input.</span></li><li><strong>03</strong><span><b>Keep in touch</b>We share photos and updates about your pet’s day, including any changes worth knowing about.</span></li></ol>
+      <div className="rain-photo"><Image src={assetPath("/photos/rain-shake.jpg")} alt="A wet white dog shaking water beside Alex, who is holding a towel." fill sizes="(max-width: 980px) 90vw, 48vw" /></div>
+      <div className="real-life-copy"><p className="eyebrow light"><span /> A little thank-you</p><h2>Five visits. The sixth is on us.</h2><p className="work-intro">After five paid visits, your sixth visit is free—up to $30. No points or complicated tiers, just a thank-you for trusting us with your pets.</p>
+        <ol><li><strong>01</strong><span><b>Visits one through five</b>Book and complete five paid visits with us.</span></li><li><strong>02</strong><span><b>Your sixth visit</b>Your next visit is free when it costs $30 or less.</span></li><li><strong>03</strong><span><b>Visits over $30</b>If your sixth visit costs more than $30, we’ll take $30 off the total.</span></li></ol>
       </div>
     </div></section>
 

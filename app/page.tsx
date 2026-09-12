@@ -6,11 +6,11 @@ const SITE_BASE_PATH = (process.env.PAGES_BASE_PATH ?? "").replace(/\/$/, "");
 const assetPath = (path: string) => `${SITE_BASE_PATH}${path}`;
 
 const services = [
-  { title: "Dog walks", label: "Alex & Morgan", text: "A neighborhood walk shaped around your dog’s energy, pace, and interests, with time to sniff and explore.", link: "Ask about walks", tone: "coral" },
-  { title: "Drop-in visits", label: "Alex & Morgan • At your home", text: "Food, fresh water, litter boxes, medication, play, and company. Visits follow your pets’ routines, whether you have one animal or a whole household.", link: "Ask about visits", tone: "blue" },
-  { title: "Longer visits", label: "At your home", text: "More time together for pets who benefit from a longer visit. We can include a walk, playtime, meals, or quiet company.", link: "Ask about longer visits", tone: "yellow" },
-  { title: "House sitting", label: "Morgan • At your home", text: "Overnight care in your home, where your pets can stay in familiar surroundings and follow their usual routines.", link: "Ask about house sitting", tone: "blue" },
-  { title: "Doggy daycare", label: "At Morgan’s home", text: "Daytime care and company at Morgan’s home, with time for activity and rest.", link: "Ask about daycare", tone: "yellow" },
+  { title: "Dog walks", label: "Alex & Morgan", text: "A neighborhood walk shaped around your dog’s energy, pace, and interests, with time to sniff and explore.", link: "Ask about walks", tone: "coral", image: "/photos/morgan-dog-walk.png", alt: "Morgan in a red shirt walking a black-and-white dog through the neighborhood." },
+  { title: "Drop-in visits", label: "Alex & Morgan • At your home", text: "Food, fresh water, litter boxes, medication, play, and company. Visits follow your pets’ routines, whether you have one animal or a whole household.", link: "Ask about visits", tone: "blue", image: "/photos/alex-cat-feeder.png", alt: "Alex checking in on a gray cat beside its automatic feeder." },
+  { title: "Longer visits", label: "At your home", text: "More time together for pets who benefit from a longer visit. We can include a walk, playtime, meals, or quiet company.", link: "Ask about longer visits", tone: "yellow", image: "/photos/alex-westie.png", alt: "Alex spending time with a white Westie during a visit." },
+  { title: "House sitting", label: "Morgan • At your home", text: "Overnight care in your home, where your pets can stay in familiar surroundings and follow their usual routines.", link: "Ask about house sitting", tone: "blue", image: "/photos/morgan-chihuahua-chair.png", alt: "Morgan relaxing in a brown chair with a small brown Chihuahua." },
+  { title: "Doggy daycare", label: "At Morgan’s home", text: "Daytime care and company at Morgan’s home, with time for activity and rest.", link: "Ask about daycare", tone: "yellow", image: "/photos/alex-bathtub.png", alt: "Alex sitting beside a black dog in a bathtub." },
   { title: "Overnight boarding", label: "At Morgan’s home", text: "A stay at Morgan’s home while you’re away. Morgan will talk with you about meals, medication, sleep, and what helps your dog settle in.", link: "Ask about boarding", tone: "coral" },
 ];
 
@@ -48,7 +48,13 @@ export default function Home() {
 
     <section className="services page-shell" id="services">
       <div className="section-heading"><div><p className="eyebrow"><span /> Services</p><h2>A simple plan that fits the animal.</h2></div><p className="section-intro">A daily walk, a visit while you’re at work, or care while you’re away—we’ll help you find the right arrangement for your pets.</p></div>
-      <div className="service-grid">{services.map((service, i) => <article className={`service-card ${service.tone}`} key={service.title}><span className="service-number">{String(i + 1).padStart(2, "0")}</span><p className="service-label">{service.label}</p><h3>{service.title}</h3><p>{service.text}</p><a href="#request">{service.link} <span aria-hidden="true">↗</span></a></article>)}</div>
+      <div className="service-grid">{services.map((service, i) => <article className={`service-card ${service.tone}`} key={service.title}>
+        <div className={`service-photo${service.image ? "" : " service-photo-placeholder"}`}>
+          {service.image ? <Image src={assetPath(service.image)} alt={service.alt ?? ""} fill sizes="(max-width: 700px) 90vw, (max-width: 980px) 44vw, 31vw" /> : <><span aria-hidden="true">Z</span><p>Boarding photos<br />coming soon</p><span aria-hidden="true">Z</span></>}
+          <span className="service-number">{String(i + 1).padStart(2, "0")}</span>
+        </div>
+        <div className="service-card-copy"><p className="service-label">{service.label}</p><h3>{service.title}</h3><p>{service.text}</p><a href="#request">{service.link} <span aria-hidden="true">↗</span></a></div>
+      </article>)}</div>
       <aside className="pricing-note" aria-labelledby="pricing-title"><div className="pricing-mark" aria-hidden="true">$</div><div><h3 id="pricing-title">Simple rates, flexible arrangements</h3><p>Tell us how much time you need, how many pets you have, and what their care involves. We’ll talk through the details and agree on the plan and price before care begins.</p></div></aside>
     </section>
 

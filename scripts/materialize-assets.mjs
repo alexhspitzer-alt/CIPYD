@@ -2,11 +2,13 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { basename, dirname } from "node:path";
 
 const assets = [
-  ["file_00000000d09881f581196e8f435fe15f.png", "public/photos/morgan-dog-walk.png"],
-  ["file_000000009dd4822f87784fef7e708858.png", "public/photos/alex-cat-feeder.png"],
-  ["file_0000000091d4822fa7dfed2c6d314fec.png", "public/photos/alex-westie.png"],
-  ["file_000000007a6481f585b39075af2e501f.png", "public/photos/morgan-chihuahua-chair.png"],
-  ["file_000000006048822f8d998b24e8df0454.png", "public/photos/alex-bathtub.png"],
+  ...[
+    "morgan-dog-walk.webp",
+    "alex-cat-feeder.webp",
+    "alex-westie.webp",
+    "morgan-chihuahua-chair.webp",
+    "alex-bathtub.webp",
+  ].map((name) => [`assets/source/photos/${name}.base64`, `public/photos/${name}`]),
   ...[
     "chair-dogs.jpg",
     "dog-kiss.jpg",

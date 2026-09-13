@@ -6,12 +6,12 @@ const SITE_BASE_PATH = (process.env.PAGES_BASE_PATH ?? "").replace(/\/$/, "");
 const assetPath = (path: string) => `${SITE_BASE_PATH}${path}`;
 
 const services = [
-  { title: "Dog walks", label: "Alex & Morgan", text: "A neighborhood walk shaped around your dog’s energy, pace, and interests, with time to sniff and explore.", link: "Ask about walks", tone: "coral" },
-  { title: "Drop-in visits", label: "Alex & Morgan • At your home", text: "Food, fresh water, litter boxes, medication, play, and company. Visits follow your pets’ routines, whether you have one animal or a whole household.", link: "Ask about visits", tone: "blue" },
-  { title: "Longer visits", label: "At your home", text: "More time together for pets who benefit from a longer visit. We can include a walk, playtime, meals, or quiet company.", link: "Ask about longer visits", tone: "yellow" },
-  { title: "House sitting", label: "Morgan • At your home", text: "Overnight care in your home, where your pets can stay in familiar surroundings and follow their usual routines.", link: "Ask about house sitting", tone: "blue" },
-  { title: "Doggy daycare", label: "At Morgan’s home", text: "Daytime care and company at Morgan’s home, with time for activity and rest.", link: "Ask about daycare", tone: "yellow" },
-  { title: "Overnight boarding", label: "At Morgan’s home", text: "A stay at Morgan’s home while you’re away. Morgan will talk with you about meals, medication, sleep, and what helps your dog settle in.", link: "Ask about boarding", tone: "coral" },
+  { title: "Dog walks", text: "A neighborhood walk shaped around your dog’s energy, pace, and interests, with time to sniff and explore.", link: "Ask about walks", tone: "coral", image: "/photos/morgan-dog-walk.webp", alt: "Morgan in a red shirt walking a black-and-white dog through the neighborhood." },
+  { title: "Drop-in visits", text: "Food, fresh water, litter boxes, medication, play, and company. Visits follow your pets’ routines, whether you have one animal or a whole household.", link: "Ask about visits", tone: "blue", image: "/photos/alex-cat-feeder.webp", alt: "Alex checking in on a gray cat beside its automatic feeder." },
+  { title: "Longer visits", text: "More time together for pets who benefit from a longer visit. We can include a walk, playtime, meals, or quiet company.", link: "Ask about longer visits", tone: "yellow", image: "/photos/alex-westie.webp", alt: "Alex spending time with a white Westie during a visit." },
+  { title: "House sitting", text: "Overnight care in your home, where your pets can stay in familiar surroundings and follow their usual routines.", link: "Ask about house sitting", tone: "blue", image: "/photos/morgan-chihuahua-chair.webp", alt: "Morgan relaxing in a brown chair with a small brown Chihuahua." },
+  { title: "Doggy daycare", text: "Daytime care and company at Morgan’s home, with time for activity and rest.", link: "Ask about daycare", tone: "yellow", image: "/photos/alex-bathtub.webp", alt: "Alex sitting beside a black dog in a bathtub." },
+  { title: "Overnight boarding", text: "A stay at Morgan’s home while you’re away. Morgan will talk with you about meals, medication, sleep, and what helps your dog settle in.", link: "Ask about boarding", tone: "coral" },
 ];
 
 const photos = [
@@ -48,7 +48,13 @@ export default function Home() {
 
     <section className="services page-shell" id="services">
       <div className="section-heading"><div><p className="eyebrow"><span /> Services</p><h2>A simple plan that fits the animal.</h2></div><p className="section-intro">A daily walk, a visit while you’re at work, or care while you’re away—we’ll help you find the right arrangement for your pets.</p></div>
-      <div className="service-grid">{services.map((service, i) => <article className={`service-card ${service.tone}`} key={service.title}><span className="service-number">{String(i + 1).padStart(2, "0")}</span><p className="service-label">{service.label}</p><h3>{service.title}</h3><p>{service.text}</p><a href="#request">{service.link} <span aria-hidden="true">↗</span></a></article>)}</div>
+      <div className="service-grid">{services.map((service, i) => <article className={`service-card ${service.tone}`} key={service.title}>
+        <div className={`service-photo${service.image ? "" : " service-photo-placeholder"}`}>
+          {service.image ? <><Image className="service-photo-backdrop" src={assetPath(service.image)} alt="" aria-hidden="true" fill sizes="(max-width: 700px) 90vw, (max-width: 980px) 44vw, 31vw" /><Image className="service-photo-subject" src={assetPath(service.image)} alt={service.alt ?? ""} fill sizes="(max-width: 700px) 90vw, (max-width: 980px) 44vw, 31vw" /></> : <><span aria-hidden="true">Z</span><p>Boarding photos<br />coming soon</p><span aria-hidden="true">Z</span></>}
+          <span className="service-number">{String(i + 1).padStart(2, "0")}</span>
+        </div>
+        <div className="service-card-copy"><h3>{service.title}</h3><p>{service.text}</p><a href="#request">{service.link} <span aria-hidden="true">↗</span></a></div>
+      </article>)}</div>
       <aside className="pricing-note" aria-labelledby="pricing-title"><div className="pricing-mark" aria-hidden="true">$</div><div><h3 id="pricing-title">Simple rates, flexible arrangements</h3><p>Tell us how much time you need, how many pets you have, and what their care involves. We’ll talk through the details and agree on the plan and price before care begins.</p></div></aside>
     </section>
 
@@ -58,7 +64,7 @@ export default function Home() {
     </section>
 
     <section className="real-life" id="care"><div className="page-shell real-life-grid">
-      <div className="rain-photo"><Image src={assetPath("/photos/rain-shake.jpg")} alt="A wet white dog shaking water beside Alex, who is holding a towel." fill sizes="(max-width: 980px) 90vw, 48vw" /></div>
+      <figure className="rain-photo"><Image src={assetPath("/photos/rain-shake.jpg")} alt="A wet white dog shaking water beside Alex, who is holding a towel." fill sizes="(max-width: 980px) 90vw, 48vw" /><figcaption>Thanks.</figcaption></figure>
       <div className="real-life-copy"><p className="eyebrow light"><span /> A little thank-you</p><h2>Five visits. The sixth is on us.</h2><p className="work-intro">After five paid visits, your sixth visit is free—up to $30. No points or complicated tiers, just a thank-you for trusting us with your pets.</p>
         <ol><li><strong>01</strong><span><b>Visits one through five</b>Book and complete five paid visits with us.</span></li><li><strong>02</strong><span><b>Your sixth visit</b>Your next visit is free when it costs $30 or less.</span></li><li><strong>03</strong><span><b>Visits over $30</b>If your sixth visit costs more than $30, we’ll take $30 off the total.</span></li></ol>
       </div>
@@ -72,6 +78,6 @@ export default function Home() {
     <section className="gallery page-shell" aria-labelledby="gallery-title"><div className="gallery-heading"><p className="eyebrow"><span /> A few favorites</p><h2 id="gallery-title">Time together</h2></div><div className="snapshot-grid">{photos.map((photo, i) => <figure className={`snapshot snapshot-${i + 1}`} key={photo.src}><div className="snapshot-image"><Image src={assetPath(photo.src)} alt={photo.alt} fill sizes="(max-width: 700px) 88vw, 30vw" /></div></figure>)}</div></section>
 
     <section className="request" id="request"><div className="request-inner page-shell"><div><p className="eyebrow light"><span /> Start a conversation</p><h2>Tell us about your pet.</h2><p className="request-intro">Send your neighborhood, dates, the kind of care you need, and a little about your animals. We’ll get back to you to talk through the routine and agree on a plan and price.</p></div><div className="request-card"><div className="request-line"><span>1</span><p><b>Your pets</b>Who needs care, their routines, and anything you’d like us to know.</p></div><div className="request-line"><span>2</span><p><b>Your schedule</b>Dates, timing, and any flexibility.</p></div><div className="request-line"><span>3</span><p><b>The care you need</b>Walks, visits, house sitting, daycare, boarding, or an arrangement we can work out together.</p></div><a className="button button-wide" href={REQUEST_FORM_URL}>Tell us about your pet <span aria-hidden="true">↗</span></a><small id="request-form-coming-soon">Request form link coming soon.</small></div></div></section>
-    <footer className="site-footer page-shell"><a className="wordmark footer-mark" href="#top"><span>CAN I PET</span><span>YOUR DOG</span><em className="title-subtitle">(or cat)</em></a><p>Flexible pet care with Alex and Morgan in Durham, North Carolina.</p><a href="#top">Back to top ↑</a></footer>
+    <footer className="site-footer page-shell"><a className="wordmark footer-mark" href="#top"><span>CAN I PET</span><span>YOUR DOG</span><em className="title-subtitle">(or cat)</em></a><p>Flexible pet care with Alex and Morgan in Durham, North Carolina.</p><a href="#top">Back to top ↑</a><small className="last-updated">Last updated <time dateTime="2026-09-13">September 13, 2026</time></small></footer>
   </main>;
 }

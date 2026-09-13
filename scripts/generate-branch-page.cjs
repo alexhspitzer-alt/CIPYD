@@ -3,7 +3,7 @@ const vm = require('vm');
 const ts = require('typescript');
 const source = fs.readFileSync('app/page.tsx', 'utf8').replace('import Image from "next/image";', 'const Image = (props: any) => React.createElement("img", props);');
 const js = ts.transpileModule(source, { compilerOptions: { jsx: ts.JsxEmit.React, module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022, esModuleInterop: true } }).outputText;
-const React = { createElement(type, props, ...children) { return { type, props: { ...(props || {}), children } }; } };
+const React = { Fragment: Symbol('Fragment'), createElement(type, props, ...children) { return { type, props: { ...(props || {}), children } }; } };
 const mod = { exports: {} };
 vm.runInNewContext(js, { module: mod, exports: mod.exports, React, process: { env: {} } });
 const voids = new Set(['img','br','hr','meta','link','input']);
@@ -17,6 +17,7 @@ function render(node) {
   if (node == null || node === false || node === true) return '';
   if (typeof node === 'string' || typeof node === 'number') return esc(node);
   if (Array.isArray(node)) return node.map(render).join('');
+  if (node.type === React.Fragment) return render(node.props?.children);
   if (typeof node.type === 'function') return render(node.type(node.props));
   const { children, ...props } = node.props || {};
   let attrs = '';

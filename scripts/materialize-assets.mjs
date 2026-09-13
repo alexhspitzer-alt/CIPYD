@@ -3,6 +3,13 @@ import { basename, dirname } from "node:path";
 
 const assets = [
   ...[
+    "morgan-dog-walk.webp",
+    "alex-cat-feeder.webp",
+    "alex-westie.webp",
+    "morgan-chihuahua-chair.webp",
+    "alex-bathtub.webp",
+  ].map((name) => [`assets/source/photos/${name}.base64`, `public/photos/${name}`]),
+  ...[
     "chair-dogs.jpg",
     "dog-kiss.jpg",
     "floor-hangout.jpg",

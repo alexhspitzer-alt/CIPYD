@@ -32,18 +32,17 @@ jobs:
 
       - name: Determine site base path
         shell: bash
-        run: |
-          if [[ "${{ github.event.repository.name }}" == "${{ github.repository_owner }}.github.io" ]]; then
-            echo "PAGES_BASE_PATH=" >> "$GITHUB_ENV"
-          else
-            echo "PAGES_BASE_PATH=/${{ github.event.repository.name }}" >> "$GITHUB_ENV"
-          fi
+        run: echo "PAGES_BASE_PATH=" >> "$GITHUB_ENV"
 
       - name: Install dependencies
         run: npm ci
 
       - name: Build static site
         run: npm run build
+
+      - name: Include domain verification files
+        shell: bash
+        run: find . -maxdepth 1 -type f -name 'ms*.txt.json' -exec cp '{}' out/ \;
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

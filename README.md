@@ -37,9 +37,9 @@ The finished static site is written to `out/`.
 
 If Pages is configured to **Deploy from a branch** instead, select the repository root. The committed `index.html` is a standalone branch-deployment entry point and loads its text-safe assets directly. Regenerate it after editing the page or CSS with `npm run branch-page`.
 
-The workflow automatically handles normal project URLs such as `username.github.io/repository-name/` and root user-site repositories such as `username.github.io`. If you later attach a custom domain to a project repository, set `PAGES_BASE_PATH` to an empty value in the workflow before rebuilding.
+The workflow publishes the site at the custom-domain root, `https://petyour.dog/`, with an empty `PAGES_BASE_PATH`. The `CNAME` file is included in both branch-based and GitHub Actions deployments.
 
-The same base-path setting is applied to scripts, fonts, and every photo, so the site can live inside a repository subdirectory without broken assets.
+Any root-level Microsoft ownership file matching `ms*.txt.json` is copied into the exported Pages artifact so the verification URL remains reachable after an Actions deployment.
 
 ## Main files
 

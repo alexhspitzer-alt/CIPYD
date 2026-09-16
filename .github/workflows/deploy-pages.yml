@@ -42,7 +42,7 @@ jobs:
 
       - name: Include domain verification files
         shell: bash
-        run: find . -maxdepth 1 -type f -name 'ms*.txt.json' -exec cp '{}' out/ \;
+        run: cp public/ms23927979.txt out/ms23927979.txt
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

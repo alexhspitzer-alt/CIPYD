@@ -1,7 +1,6 @@
 import Image from "next/image";
 
-// Placeholder: replace with the confirmed public request form URL before launch.
-const REQUEST_FORM_URL = "#request-form-coming-soon";
+const BOOKING_PAGE_URL: string = "https://bookings.cloud.microsoft/book/CanIPetYourDog@petyour.dog/?ismsaljsauthenabled";
 const SITE_BASE_PATH = (process.env.PAGES_BASE_PATH ?? "").replace(/\/$/, "");
 const assetPath = (path: string) => `${SITE_BASE_PATH}${path}`;
 
@@ -25,7 +24,7 @@ export default function Home() {
     <header className="site-header">
       <a className="wordmark" href="#top" aria-label="Can I Pet Your Dog home"><span>CAN I PET</span><span>YOUR DOG</span><em className="title-subtitle">(or cat)</em></a>
       <nav aria-label="Main navigation"><a href="#services">Services</a><a href="#care">Sixth visit free</a><a href="#team">Alex & Morgan</a></nav>
-      <a className="button button-small" href="#request">Tell us about your pet</a>
+      <a className="button button-small" href="#request">{BOOKING_PAGE_URL ? "Book a meet & greet" : "Tell us about your pet"}</a>
     </header>
 
     <section className="hero page-shell" id="top">
@@ -33,7 +32,7 @@ export default function Home() {
         <p className="eyebrow"><span /> Flexible pet care in Durham, North Carolina</p>
         <h1>CAN I PET<br />YOUR DOG<em className="title-subtitle">(or cat)</em></h1>
         <div className="hero-intro"><p>We’re Alex and Morgan. We offer walks, visits, house sitting, doggy daycare, and overnight boarding, with care shaped around your pet’s routine and the help you need.</p><p>Tell us about your pets and your schedule. We’ll work out a plan and price together.</p></div>
-        <div className="hero-actions"><a className="button" href="#request">Tell us about your pet <span aria-hidden="true">↗</span></a><a className="text-link" href="#services">See services <span aria-hidden="true">↓</span></a></div>
+        <div className="hero-actions"><a className="button" href="#request">{BOOKING_PAGE_URL ? "Book a meet & greet" : "Tell us about your pet"} <span aria-hidden="true">↗</span></a><a className="text-link" href="#services">See services <span aria-hidden="true">↓</span></a></div>
         <div className="trust-row" aria-label="Pet care experience"><span>Alex: almost a decade in the pet industry</span><span>Morgan: 30+ years caring for pets</span><span>All ages, sizes, and personalities</span></div>
       </div>
       <div className="hero-visual">
@@ -77,7 +76,18 @@ export default function Home() {
 
     <section className="gallery page-shell" aria-labelledby="gallery-title"><div className="gallery-heading"><p className="eyebrow"><span /> A few favorites</p><h2 id="gallery-title">Time together</h2></div><div className="snapshot-grid">{photos.map((photo, i) => <figure className={`snapshot snapshot-${i + 1}`} key={photo.src}><div className="snapshot-image"><Image src={assetPath(photo.src)} alt={photo.alt} fill sizes="(max-width: 700px) 88vw, 30vw" /></div></figure>)}</div></section>
 
-    <section className="request" id="request"><div className="request-inner page-shell"><div><p className="eyebrow light"><span /> Start a conversation</p><h2>Tell us about your pet.</h2><p className="request-intro">Send your neighborhood, dates, the kind of care you need, and a little about your animals. We’ll get back to you to talk through the routine and agree on a plan and price.</p></div><div className="request-card"><div className="request-line"><span>1</span><p><b>Your pets</b>Who needs care, their routines, and anything you’d like us to know.</p></div><div className="request-line"><span>2</span><p><b>Your schedule</b>Dates, timing, and any flexibility.</p></div><div className="request-line"><span>3</span><p><b>The care you need</b>Walks, visits, house sitting, daycare, boarding, or an arrangement we can work out together.</p></div><a className="button button-wide" href={REQUEST_FORM_URL}>Tell us about your pet <span aria-hidden="true">↗</span></a><small id="request-form-coming-soon">Request form link coming soon.</small></div></div></section>
-    <footer className="site-footer page-shell"><a className="wordmark footer-mark" href="#top"><span>CAN I PET</span><span>YOUR DOG</span><em className="title-subtitle">(or cat)</em></a><p>Flexible pet care with Alex and Morgan in Durham, North Carolina.</p><a href="#top">Back to top ↑</a><small className="last-updated">Last updated <time dateTime="2026-09-13">September 13, 2026</time></small></footer>
+    {BOOKING_PAGE_URL ? (
+      <section className="request booking" id="request" aria-labelledby="booking-title">
+        <div className="page-shell booking-intro">
+          <div><p className="eyebrow light"><span /> Start a conversation</p><h2 id="booking-title">Let’s meet your pet.</h2></div>
+          <div className="booking-copy"><p>Book a 30-minute meet and greet with Alex. Tell us a little about your pets and the care you need, and we’ll confirm where to meet after you book.</p><p>Times are offered from 9 a.m. to 8 p.m. daily when Alex’s calendar is free.</p></div>
+        </div>
+        <div className="page-shell booking-frame"><iframe src={BOOKING_PAGE_URL} title="Schedule a meet and greet with Alex" loading="lazy" /></div>
+        <p className="page-shell booking-help">Having trouble with the form? <a href={BOOKING_PAGE_URL} target="_blank" rel="noopener noreferrer">Open the booking page</a> or email <a href="mailto:info@petyour.dog">info@petyour.dog</a>.</p>
+      </section>
+    ) : (
+      <section className="request" id="request"><div className="request-inner page-shell"><div><p className="eyebrow light"><span /> Start a conversation</p><h2>Tell us about your pet.</h2><p className="request-intro">Send your neighborhood, dates, the kind of care you need, and a little about your animals. We’ll get back to you to talk through the routine and agree on a plan and price.</p></div><div className="request-card"><div className="request-line"><span>1</span><p><b>Your pets</b>Who needs care, their routines, and anything you’d like us to know.</p></div><div className="request-line"><span>2</span><p><b>Your schedule</b>Dates, timing, and any flexibility.</p></div><div className="request-line"><span>3</span><p><b>The care you need</b>Walks, visits, house sitting, daycare, boarding, or an arrangement we can work out together.</p></div><a className="button button-wide" href="mailto:info@petyour.dog">Email us about your pet <span aria-hidden="true">↗</span></a><small>Or book a meet and greet here when scheduling opens.</small></div></div></section>
+    )}
+    <footer className="site-footer page-shell"><a className="wordmark footer-mark" href="#top"><span>CAN I PET</span><span>YOUR DOG</span><em className="title-subtitle">(or cat)</em></a><p>Flexible pet care with Alex and Morgan in Durham, North Carolina.</p><a href="#top">Back to top ↑</a><small className="last-updated">Last updated <time dateTime="2026-09-26">September 26, 2026</time></small></footer>
   </main>;
 }

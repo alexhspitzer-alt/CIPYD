@@ -80,9 +80,9 @@ export default function Home() {
       <section className="request booking" id="request" aria-labelledby="booking-title">
         <div className="page-shell booking-intro">
           <div><p className="eyebrow light"><span /> Start a conversation</p><h2 id="booking-title">Let’s meet your pet.</h2></div>
-          <div className="booking-copy"><p>Book a 30-minute meet and greet with Alex. Tell us a little about your pets and the care you need, and we’ll confirm where to meet after you book.</p><p>Times are offered from 9 a.m. to 8 p.m. daily when Alex’s calendar is free.</p></div>
+          <div className="booking-copy"><p>Book a 30-minute meet and greet with Alex or Morgan. Choose a sitter in the form and tell us about your pets and the care you need. We’ll confirm where to meet after you book.</p><p>Available times depend on each sitter’s schedule, between 9 a.m. and 8 p.m. Eastern.</p></div>
         </div>
-        <div className="page-shell booking-frame"><iframe src={BOOKING_PAGE_URL} title="Schedule a meet and greet with Alex" loading="lazy" /></div>
+        <div className="page-shell booking-frame"><iframe src={BOOKING_PAGE_URL} title="Schedule a meet and greet with Alex or Morgan" loading="lazy" /></div>
         <p className="page-shell booking-help">Having trouble with the form? <a href={BOOKING_PAGE_URL} target="_blank" rel="noopener noreferrer">Open the booking page</a> or email <a href="mailto:info@petyour.dog">info@petyour.dog</a>.</p>
       </section>
     ) : (

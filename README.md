@@ -4,10 +4,11 @@ A responsive, static homepage for Alex and Morgan’s pet-care partnership in Du
 
 Visual reference: https://can-i-pet-your-dog.happyfarmer.chatgpt.site
 
-## Before launch
+## Meet and greet booking
 
-1. Open `app/page.tsx`.
-2. Replace `REQUEST_FORM_URL` with the public URL of your Google Form.
+The homepage embeds the public Microsoft Bookings page for **Can I Pet Your Dog**. Its 30-minute **Meet and greet** service has Alex as the assigned staff member, is offered daily from 9 a.m. to 8 p.m. Eastern when his Outlook calendar is free, and has a 30-minute buffer before and after. Customers provide pet details and care dates; Alex confirms where to meet after booking.
+
+The published URL is in `BOOKING_PAGE_URL` at the top of `app/page.tsx`. The homepage embeds it with a direct-link and email fallback. Run `npm run branch-page` if using branch-based Pages deployment; the GitHub Actions workflow rebuilds automatically from `app/page.tsx`.
 
 ## Run locally
 
@@ -43,11 +44,11 @@ Any root-level Microsoft ownership file matching `ms*.txt.json` is copied into t
 
 ## Main files
 
-- `app/page.tsx` — page copy, services, links, and image assignments
+- `app/page.tsx` — page copy, services, links, booking embed, and image assignments
 - `app/globals.css` — colors, layout, typography, and phone styles
 - `assets/source/` — text-safe Base64 sources for local photos and fonts
 - `scripts/materialize-assets.mjs` — recreates binary assets before development or builds
 - `.github/workflows/deploy-pages.yml` — automatic GitHub Pages deployment
 - `next.config.ts` — static export and repository-path support
 
-No database, payment processor, or contact-form backend is included. The request button is deliberately left ready for the Google Form URL.
+No database or payment processor is included. Booking intake and appointment availability are handled by Microsoft Bookings.

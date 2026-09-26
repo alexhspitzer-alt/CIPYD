@@ -6,7 +6,7 @@ Visual reference: https://can-i-pet-your-dog.happyfarmer.chatgpt.site
 
 ## Meet and greet booking
 
-The homepage embeds the public Microsoft Bookings page for **Can I Pet Your Dog**. Its 30-minute **Meet and greet** service has Alex as the assigned staff member, is offered daily from 9 a.m. to 8 p.m. Eastern when his Outlook calendar is free, and has a 30-minute buffer before and after. Customers provide pet details and care dates; Alex confirms where to meet after booking.
+The homepage embeds the public Microsoft Bookings page for **Can I Pet Your Dog**. Its 30-minute **Meet and greet** service assigns one available staff member, Alex or Morgan, and lets customers choose a sitter. The service is offered between 9 a.m. and 8 p.m. Eastern and has a 30-minute buffer before and after. Alex uses daily business hours and Outlook calendar conflicts. Morgan is a Team member who can manage her own availability and assigned bookings from her account; her custom hours are initially closed until she sets them. Her Outlook calendar conflicts also affect availability. Customers provide pet details and care dates; the assigned sitter confirms where to meet after booking.
 
 The published URL is in `BOOKING_PAGE_URL` at the top of `app/page.tsx`. The homepage embeds it with a direct-link and email fallback. Run `npm run branch-page` if using branch-based Pages deployment; the GitHub Actions workflow rebuilds automatically from `app/page.tsx`.
 

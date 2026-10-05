@@ -11,6 +11,7 @@ const assets = [
   ].map((name) => [`assets/source/photos/${name}.base64`, `public/photos/${name}`]),
   ...[
     "chair-dogs.jpg",
+    "boarding-morgan-dog.jpg",
     "dog-kiss.jpg",
     "floor-hangout.jpg",
     "hero-apollo.jpg",
